@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2> update comment</h2>
+<section class="mb-5">
+    <div class="card bg-light">
+        <div class="card-body">
+            <form method="post" class="mb-4" action="{% url 'comment_update' comment.id %}">
+                {% csrf_token %}
+                <textarea id="content" name="content" class="form-control" rows="3">{{ form.content.value }}</textarea>
+                <button type="submit" class="btn btn-primary">submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
